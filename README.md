@@ -5,9 +5,9 @@
 - If the player rolls any other number > 1
   - number > 1 , add to total
   - turn continues
+- Two players
+  - create as object and nest score in the object
 - If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
   - Add roll button
   - Add stop button (count the total and store the information)
 - The first player to score 100 or more points wins.
-- Two players
-  - create as object and nest score in the object

@@ -1,36 +1,28 @@
-//---- count to 6
+//---- Count to 6
 var score = [];
-
-// function randomNumberGenerator(number){
-//   for( var i = 1; i <= number; i ++){
-//   array.push(i);
-//
-//   console.log(array);
-//   }
-// }
 
 function randomNumber(number){
   var number = Math.floor((Math.random() * 6) + 1);
-    score.push(count(number));
+    score.push(RollingTurn(number));
     console.log("total", score);
 }
 
-function count(number) {
+function RollingTurn(number) {
   if (number === 1 ){
-    return "End Turn/ Next Player up"
+    return score = 0
   }
   else if (( number > 1 ) && ( number <=6)){
    return number;
   }
   }
 
-var total = 0;
-var numbers = [1,2,3,4]
-for( var i = 0; i <numbers.length; i+= 1) {
-  total += numbers[i];
+function getTotal(){
+  var total = 0;
+  for( var i = 0; i <score.length; i+= 1) {
+    total += score[i];
+  }
+  // return total;
 }
-
-
 
 $(document).ready(function() {
 

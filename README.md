@@ -10,3 +10,4 @@
   - Add stop button (count the total and store the information)
 - The first player to score 100 or more points wins.
 - Two players
+  - create as object and nest score in the object

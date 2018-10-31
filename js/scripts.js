@@ -33,20 +33,6 @@ function Game(){
    this.players.push(person)
  }
 
- Game.prototype.addPoint = function(score) {
-   this.point = this.point + 1
- }
-
-Game.prototype.onRoll = function(number){
-  if (number === 1 ){
-    this.point = 0
-  }
-  else if (( number > 1 ) && ( number <=6)){
-   this.point = number;
-  }
-}
-
-
 
 
 // Business Logic for Player
@@ -63,7 +49,7 @@ Person.prototype.onRoll = function randomNumber(number){
 
 function RollingTurn(number) {
   if (number === 1 ){
-    return score = 0
+    return number = 0 ; alert("Next PLayer");
   }
   else if (( number > 1 ) && ( number <=6)){
    return number;
@@ -73,17 +59,15 @@ function RollingTurn(number) {
 Person.prototype.addScore = function() {
   var total = 0;
   for( var i = 0; i <this.score.length; i+= 1) {
-    // this.score =
-    this.totalScore = total += this.score[i];
-  
-    // console.log("total", this.score);
+    //if array has 0, score = 0
+    if(this.score.includes(0)) {
+      this.totalScore = 0
+    }
+    else  {
+      this.totalScore = total += this.score[i];
+    }
   }
-  // return total;
 }
-
-
-
-
 
 
 
@@ -92,9 +76,6 @@ var player1 = new Person("Blake", 3)
 var player2 = new Person("Ngan", 100)
 pigDice.addPlayer(player1)
 pigDice.addPlayer(player2)
-pigDice.addPoint(player1)
-pigDice.onRoll(player1)
-pigDice.onRoll()
 player1.onRoll()
 player1.onRoll()
 player1.onRoll()

@@ -29,31 +29,46 @@ function Game(){
   this.point = [];
   this.players = [];
 }
+
  Game.prototype.addPlayer = function(person) {
    this.players.push(person)
+
+
  }
 
-
-
 // Business Logic for Player
+
 function Person (name, score, total){
   this.name = name;
   this.score = [];
-  this.totalScore= [total];
+  this.total= total;
 }
 
-Person.prototype.onRoll = function randomNumber(number){
-  var number = Math.floor((Math.random() * 6) + 1);
-    this.score.push(rollingTurn(number));
+Person.prototype.onRoll = function () {
+  var randomNumber = Math.floor((Math.random() * 6) + 1);
+    if (randomNumber === 1 ){
+      alert("Next Player");
+      this.score.push(0);
+    }
+    else if (( randomNumber > 1 ) && ( randomNumber <= 6)){
+     this.score.push(randomNumber);
+    }
+  }
+
+Person.prototype.turnScore = function() {
+  var total = 0;
+  for( var i = 0; i <this.score.length; i+= 1) {
+    if(this.score.includes(undefined)) {
+      this.total = 0
+    }
+    else  {
+      this.total = total += this.score[i]
+    }
+  }
 }
 
-function rollingTurn(number) {
-  if (number === 1 ){
-    return alert("Next Player");
-  }
-  else if (( number > 1 ) && ( number <=6)){
-   return number;
-  }
+Person.prototype.totalScore = function() {
+  
 }
 
 function win(totalScore) {
@@ -61,20 +76,6 @@ function win(totalScore) {
     return alert("You win! Congratulations.");
   }
 }
-
-Person.prototype.addScore = function() {
-  var total = 0;
-  for( var i = 0; i <this.score.length; i+= 1) {
-    if(this.score.includes(undefined)) {
-      this.totalScore = 0
-    }
-    else  {
-      this.totalScore = total += this.score[i];
-    }
-  }
-}
-
-
 
 var pigDice = new Game();
 var player1 = new Person("Blake")
@@ -95,6 +96,6 @@ player1
 
 // User logic for Game
 $(document).ready(function() {
-
+  $()
 
 });

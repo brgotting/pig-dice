@@ -1,5 +1,5 @@
 ##Specifications
-- Random number generator from 1 to 6 base on die
+- Random number generator from 1 to 6 based on di
 - If player scores a 1, they score nothing and this end their turn
   - number === 1 , lose turn
 - If the player rolls any other number > 1
@@ -7,7 +7,7 @@
   - turn continues
 - Two players
   - create as object and nest score in the object
-- If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+- If a player chooses to "hold", their total is added to the score, and it becomes the next player's turn.
   - Add roll button
   - Add stop button (count the total and store the information)
 - The first player to score 100 or more points wins.

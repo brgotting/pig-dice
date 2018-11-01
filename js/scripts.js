@@ -27,7 +27,6 @@ Person.prototype.onRoll = function () {
   else if (( randomNumber > 1 ) && ( randomNumber <= 6)){
     this.score.push(randomNumber);
   }
-  console.log(this.score);
   return randomNumber;
 }
 
@@ -43,12 +42,10 @@ Person.prototype.turnScore = function() {
   }
   this.score = [];
   return this.total
-  console.log(this.total)
 }
 
 Person.prototype.totalScore = function() {
   this.finalTotal.push(this.total);
-  console.log(this.total)
   this.total = 0;
   return this.finalTotal;
 }
@@ -84,7 +81,7 @@ function rollingDice() {
     var allOne = player1.finalScore();
     $("#playerOneTurnTotal").text(string);
     $("#playerOneTotalScore").text(allOne);
-    if (allOne >= 100) {
+    if (allOne >= 30) {
       alert("You win! Congratulations.");
     }
   });
@@ -101,7 +98,7 @@ function rollingDice() {
     var allTwo = player2.finalScore();
     $("#playerTwoTurnTotal").text(string);
     $("#playerTwoTotalScore").text(allTwo);
-    if (allTwo >= 100) {
+    if (allTwo >= 30) {
       alert("You win! Congratulations.");
     }
   });
